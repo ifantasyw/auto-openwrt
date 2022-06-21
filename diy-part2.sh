@@ -13,3 +13,10 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 sed -i "s/OpenWrt /$(date +%Y.%m.%d) by FANTASYW /g" package/lean/default-settings/files/zzz-default-settings
+
+echo '修改时区'
+sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
+
+echo '修改banner'
+rm -rf package/base-files/files/etc/banner
+cp -f ../banner package/base-files/files/etc/
