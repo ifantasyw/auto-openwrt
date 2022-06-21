@@ -24,4 +24,4 @@ sed -i "s/'UTC'/'CST-8'\n set system.@system[-1].zonename='Asia\/Shanghai'/g" pa
 
 echo '修改banner'
 rm -rf package/base-files/files/etc/banner
-cp -f ../banner package/base-files/files/etc/
+cp -f banner package/base-files/files/etc/
